@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Predictive Analysis of Productive Employment Based on Economic Growth in Kenya</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {
+      height: 450px
+    }
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+
+      .row.content {
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Predictive Analysis of Productive Employment Based on Economic Growth in Kenya</a>
+		<p><b>A Data Science Project by <a href="https://github.com/IsaacMwendwa">Isaac Mwendwa</a></b><p>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid text-center">
+    <div class="row content">
+      <div class="col-sm-2 sidenav">
+        <p><b>Background Information</b></p>
+        <p>Productive employment is employment yielding sufficient returns to labour to permit a worker and
+          his/her dependents a level of consumption above the poverty line</p>
+        <p>The United Nations has set the poverty line to a consumption of below $1.90 a day</p>
+        <p><b>Sample Test Files, Courtesy of KNBS</b></p>
+        <p><a href="{{ url_for('download', filename='Wage_Employment_and_GDP_2018.csv') }}">Download Wage Employment and
+            GDP 2018.csv</a>
+        </p>
+      </div>
+
+      <div class="col-sm-8 text-left">
+        <h1>Predictive Analysis of Productive Employment</h1>
+        <p>Welcome to do a predictive analysis of productive employment based on economic growth in Kenya. Specifically, we
+          will be predicting the number of people earning below the poverty line
+          (Wage_bracket_0_to_10000), per industry. This group is referred to as the working poor. Moreover,
+          we will also predict the total number of people in employment per industry.
+        </p>
+        <p>This predictive analytics project seeks to provide actionable insights to drive policy making and action,
+          which will guarantee the attainment of <b>Sustainable Development Goals (SDGs) Number 8, which is to "Promote 
+          sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all."</b>
+        </p>
+        <p>The prediction problem is formulated as: Given the economic growth indicators (Contribution by GDP, Growth of GDP)
+          by sector or industry, predict the number of people in non-productive employment (working poor) and the total number of people
+          in employment per sector/industry.
+        </p>
+        <h3>Getting Predictions from the ML Models</h3>
+        <p>Please proceed to download sample test CSV files containing input data from the left sidebar</p>
+        <p>Upload the downloaded file to get the predictions based on the GDP metrics</p>
+        <p>The system will then use predictive models to predict the number of people in Wage_bracket_0_to_10000, and also the
+          Total_number_in_wage_employment</p>
+        <p>The results gotten are for each Industry/Sector e.g Agriculture, Manufacturing, Education e.t.c</p>
+        <form method="POST" action="" enctype="multipart/form-data">
+          <p><input type="file" name="file"></p>
+          <p><input type="submit" value="Submit"></p>
+        </form>
+      </div>
+
+      <div class="col-sm-2 sidenav">
+        <div class="well">
+          <p><b>Input Variables</b></p>
+          <p>Contribution to GDP</p>
+          <p>Growth of GDP</p>
+          <p>Industry (Sectors)</p>
+        </div>
+        <div class="well">
+          <p><b>Sorting of Predictions</b></p>
+          <p>The Prediction results are sorted in <b>descending</b> order, that
+            is, from the largest to the smallest number in the set</p>
+          <p>This readily gives a peek into the sectors which need corrective measures
+            and policy changes employed</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="container-fluid text-center">
+    <p>Predictive Analysis of Productive Employment in Kenya</p>
+	<p><b>A Data Science Project by <a href="https://github.com/IsaacMwendwa">Isaac Mwendwa</a></b><p>
+	<p><a href="https://www.linkedin.com/in/isaac-mwendwa-107/">LinkedIn Profile</a></p>
+  </footer>
+</body>
+
+</html>

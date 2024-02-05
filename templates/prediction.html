@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Predictive Analysis of Productive Employment Results</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+
+    #prediction {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+        
+    #prediction td, #prediction th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+        
+    #prediction tr:nth-child(even){background-color: #f2f2f2;}
+        
+    #prediction tr:hover {background-color: #ddd;}
+        
+    #prediction th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    * {
+    box-sizing: border-box;
+    }
+
+    .row {
+    margin-left:-5px;
+    margin-right:-5px;
+    }
+    
+    .column {
+    float: left;
+    width: 50%;
+    padding: 5px;
+    }
+
+    /* Clearfix (clear floats) */
+    .row::after {
+    content: "";
+    clear: both;
+    display: table;
+    }
+
+    table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    }
+
+    th, td {
+    text-align: left;
+    padding: 16px;
+    }
+
+    tr:nth-child(even) {
+    background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Predictive Analysis of Productive Employment Based on Economic Growth in Kenya</a>
+	  <p><b>A Data Science Project by <a href="https://github.com/IsaacMwendwa">Isaac Mwendwa</a></b><p>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><b>Background Information</b></p>
+      <p>Productive employment is employment yielding sufficient returns to labour to permit a worker and
+        his/her dependents a level of consumption above the poverty line</p>
+      <p>The United Nations has set the poverty line to a consumption of below $1.90 a day</p>
+      <p> This project seeks to provide actionable insights to drive the attainment of SDG Number 8
+      </p>
+    </div>
+
+    <div class="col-sm-8 text-left"> 
+
+        <div class="row">
+            <div class="column">
+              <table id="prediction">
+                  <caption><b>Predictive Analysis of the Working Poor Results</b></caption>
+                {% for key, value in working_poor_dict_pred.items() %}
+                    <tr>
+                        <th> {{ key }} </th>
+                        <td> {{ value }} </td>
+                    </tr>
+                {% endfor %}
+              </table>
+            </div>
+            <div class="column">
+              <table id="prediction">
+                  <caption><b>Predictive Analysis of Total Employment Results</b></caption>
+                {% for key, value in total_employment_dict_pred.items() %}
+                    <tr>
+                        <th> {{ key }} </th>
+                        <td> {{ value }} </td>
+                    </tr>
+                 {% endfor %}
+              </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column">
+              <table id="prediction">
+                  <caption><b>Predictive Analysis of the Working Poor: Percentage Contribution</b></caption>
+                {% for key, value in working_poor_percent_dict.items() %}
+                    <tr>
+                        <th> {{ key }} </th>
+                        <td> {{ value }} </td>
+                    </tr>
+                {% endfor %}
+              </table>
+            </div>
+            <div class="column">
+              <table id="prediction">
+                  <caption><b>Predictive Analysis of Total Employment: Percentage Contribution</b></caption>
+                {% for key, value in total_employment_percent_dict.items() %}
+                    <tr>
+                        <th> {{ key }} </th>
+                        <td> {{ value }} </td>
+                    </tr>
+                 {% endfor %}
+              </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p><b>Share / Proportion of the Working Poor</b></p>
+        <p>Percentage: {{ working_poor_percent }} % </p>
+      </div>
+      <div class="well">
+        <p><b>Sorting of Predictions</b></p>
+        <p>The Prediction results are sorted in <b>descending</b> order, that
+            is, from the largest to the smallest number in the set</p>
+        <p>This readily gives a peek into the sectors which need corrective measures
+            and policy changes employed</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Predictive Analysis of Productive Employment in Kenya</p>
+  <p><b>A Data Science Project by <a href="https://github.com/IsaacMwendwa">Isaac Mwendwa</a></b><p>
+  <p><a href="https://www.linkedin.com/in/isaac-mwendwa-107/">LinkedIn Profile</a></p>
+</footer>
+</body>
+</html>
