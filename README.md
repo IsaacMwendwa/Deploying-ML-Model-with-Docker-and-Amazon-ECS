@@ -26,20 +26,55 @@ This project is aimed at providing actionable insights to support SDG Number 8, 
 ## Installation
 1. Create a directory called "Deployment" in your system, and download/clone this repo to the folder \
    Fire up an Anaconda Prompt or terminal, and ```cd``` to the directory
-3. Create a Python virtual environment using conda. Specify the Python version == 3.6.9: \
+2. Create a Python virtual environment using conda. Specify the Python version == 3.6.9: \
    ```conda create -n productive_employment_prediction python=3.6.9 anaconda```
-4. Activate conda environment \
+3. Activate conda environment \
    ```conda activate productive_employment_prediction```
-3. Install requirements as follows: \
+4. Install requirements as follows: \
 	```pip install -r requirements.txt```
-10. To execute the application, run the following command in the terminal: 
+5. To execute the application, run the following command in the terminal: 
     ```Flask run```
-12. The command will fire up the Flask server
-13. Wait to be provided with a link on the terminal, which you can then paste in your browser to access the application
-14. Locate the test file Wage_Employment_and_GDP_2018.csv in the resulting home page, select the test file upload it to get predictions
-15. The predictions will then be displayed shortly thereafter
+6. The command will fire up the Flask server
+7. Wait to be provided with a link on the terminal, which you can then paste in your browser to access the application
+8. Locate the test file Wage_Employment_and_GDP_2018.csv in the resulting home page, select the test file upload it to get predictions
+9. The predictions will then be displayed shortly thereafter
+10. Now that we have tested the application is working in our local setup, let's move to containerization with Docker
 
 Container Creation with Docker
+1. Create empty file in same dir --> Dockerfile, put the following commands:
+	```
+	FROM python:3.6.9
+	EXPOSE 5000
+	# 
+	WORKDIR /Deployment
+	# 
+	COPY . .
+	# 
+	RUN pip install --no-cache-dir --upgrade -r /Deployment/requirements.txt 
+	#
+	CMD ["flask", "run", "--host", "0.0.0.0"]
+	```
+2. Build image by: \
+    ``` docker build -t productive-employment-prediction .```
+    * The command gives below output:
+    * ![image](https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/fdf73a44-e1f0-4a9a-a255-f6b239afc280)
+3. Create container by: \
+   ```docker run --name productive-employment-prediction -d -p 5000:5000 productive-employment-prediction```
+4. View container by: ```docker container ls```; or all running by: ```docker container ls -a```
+5. View logs (same as in Docker Desktop logs section): \
+  ```docker logs productive-employment-prediction```
+	* Output of above commands:
+	* ![image](https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/f7aa9cad-4059-4fab-a1c7-3d0474f2a652)
+6. The address in logs is for accessing the app when in the Linux machine hosting container
+7. Thus, to access the app, we need the IP Address of the Linux machine running the container
+8. Gotten by 2 ways:
+	(a) ipconfig --> Look for IPv4 Address of Ethernet Adapter (WSL)
+	(b) Check for 5000:5000 (http://localhost:5000) in Docker Desktop
+9. Open link in terminal to view the app
+
+
+
+
 
 ## Contributions
 Contributions are welcome using pull requests. To contribute, follow these steps:
