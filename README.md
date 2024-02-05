@@ -1,14 +1,17 @@
 # Deploying Productive Employment ML Model with Docker and Amazon ECS
 
-## Current App Link: https://wage-employment-prediction.herokuapp.com/ (Outdated, new link to be posted soon)
+## Current App Link: (Public IP Link to be Posted Soon)
 
 ## Introduction
-This project is aimed at providing actionable insights to support SDG Number 8, by allowing users/stakeholders to do a Predictive Analysis of Productive Employment in Kenya based on Economic Growth. The project uses machine learning algorithms for the regression problem: Given the economic growth metrics (Contribution to GDP, Growth by GDP) according to Industry, predict the number of people in non-productive employment (working poor) and the total number in employment; per Industry.
+This project is aimed at providing actionable insights to support SDG Number 8, by allowing users/stakeholders to do a Predictive Analysis of Productive Employment in Kenya based on Economic Growth. The project uses machine learning algorithms for the regression problem: Given the economic growth metrics (Contribution to GDP, Growth by GDP) according to Industry, predict the number of people in non-productive employment (working poor) and the total number in employment; per Industry. The models are deployed using Docker and Amazon EC2 for accessibility of the application
 
 ## Table of Contents
 * [Build_Tools](#Build_Tools)
 * [Pre-requisites](#Pre-requisites)
 * [Installation](#Installation)
+* [Container_Creation_with_Docker](#Container_Creation_with_Docker)
+* [Push_to_Docker_Hub](#Push_to_Docker_Hub)
+* [Deploy_on_Amazon_ECS](#Deploy_on_Amazon_ECS)
 * [Contributions](#Contributions)
 * [Bug / Feature Request](#Bug--Feature-Request)
 * [Authors](#Authors)
@@ -40,7 +43,7 @@ This project is aimed at providing actionable insights to support SDG Number 8, 
 9. The predictions will then be displayed shortly thereafter
 10. Now that we have tested the application is working in our local setup, let's move to containerization with Docker
 
-Container Creation with Docker
+## Container Creation with Docker
 1. Create empty file in same dir --> Dockerfile, put the following commands:
 	```
 	FROM python:3.6.9
@@ -72,9 +75,22 @@ Container Creation with Docker
 	(b) Check for 5000:5000 (http://localhost:5000) in Docker Desktop
 9. Open link in terminal to view the app
 
+## Push to Docker Hub
+* Ensure you have created an account in Docker Hub’s official site,and create a repository to store your images
+* https://hub.docker.com/repository/docker/isaac1017/productive-employment-prediction/general 
+Then get back to the command line interface
+* Start by confirming your created image is listed, and not the Tag: docker images
+* Login to your DH account: docker login
+* Create a tag for the DH repository image:
+-- Format: docker tag local-image:tagname dockerhubname/local-image:tagname
+-- This case: docker tag productive-employment-prediction:latest isaac1017/productive-employment-prediction:latest
+-- Confirm Tag Creation: docker images
+* Push your image to the DH: docker push dockerhubname/reponame:tagname
+-- This case: docker push isaac1017/productive-employment-prediction:latest
+-- Confirm creation in repo in DH
 
-
-
+## Deploy on Amazon ECS
+* Next we deploy the Productive Employment Prediction app on AWS ECS from DH Registry
 
 ## Contributions
 Contributions are welcome using pull requests. To contribute, follow these steps:
@@ -89,9 +105,9 @@ Contributions are welcome using pull requests. To contribute, follow these steps
 9. Create the pull request. See the GitHub documentation on [creating a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
 ## Bug / Feature Request
-If you find a bug (the website couldn't handle the query and/or gave undesired results), kindly open an issue [here](https://github.com/IsaacMwendwa/productive-employment-prediction/issues/new) by including your search query and the expected result.
+If you find a bug (the website couldn't handle the query and/or gave undesired results), kindly open an issue [here](https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/issues/new) by including your search query and the expected result.
 
-If you'd like to request a new function, feel free to do so by opening an issue [here](https://github.com/IsaacMwendwa/productive-employment-prediction/issues/new). Please include sample queries and their corresponding results.
+If you'd like to request a new function, feel free to do so by opening an issue [here](https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/issues/new). Please include sample queries and their corresponding results.
 
 
 ## Authors
@@ -101,6 +117,6 @@ If you'd like to request a new function, feel free to do so by opening an issue 
 [![github follow](https://img.shields.io/github/followers/IsaacMwendwa?label=Follow_on_GitHub)](https://github.com/IsaacMwendwa)
 
 
-See also the list of [Contributors](https://github.com/IsaacMwendwa/productive-employment-prediction/contributors) who participated in this project.
+See also the list of [Contributors](https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/contributors) who participated in this project.
 
 
