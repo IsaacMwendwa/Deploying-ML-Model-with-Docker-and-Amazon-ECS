@@ -76,18 +76,19 @@ This project is aimed at providing actionable insights to support SDG Number 8, 
 9. Open link in terminal to view the app
 
 ## Push to Docker Hub
-* Ensure you have created an account in Docker Hub’s official site,and create a repository to store your images
-* https://hub.docker.com/repository/docker/isaac1017/productive-employment-prediction/general 
-Then get back to the command line interface
-* Start by confirming your created image is listed, and not the Tag: docker images
-* Login to your DH account: docker login
-* Create a tag for the DH repository image:
--- Format: docker tag local-image:tagname dockerhubname/local-image:tagname
--- This case: docker tag productive-employment-prediction:latest isaac1017/productive-employment-prediction:latest
--- Confirm Tag Creation: docker images
-* Push your image to the DH: docker push dockerhubname/reponame:tagname
--- This case: docker push isaac1017/productive-employment-prediction:latest
--- Confirm creation in repo in DH
+1. Ensure you have created an account in Docker Hub’s official site, and create a repository to store the image
+2. Then get back to the command line interface
+3. Start by confirming your created image is listed, and note the Tag: \
+  ```docker images```
+4. Login to your Docker Hub account: ```docker login```
+5. Create a tag for the DH repository image:
+	* Format: docker tag local-image:tagname dockerhubname/local-image:tagname
+	* This case: \
+	```docker tag productive-employment-prediction:latest isaac1017/productive-employment-prediction:latest```
+	* Confirm Tag Creation: ```docker images```
+6. Push your image to the Docker Hub: ```docker push dockerhubname/reponame:tagname```
+	* This case: ```docker push isaac1017/productive-employment-prediction:latest```
+7. Go to Docker Hub, and confirm creation of the repo
 
 ## Deploy on Amazon ECS
 * Next we deploy the Productive Employment Prediction app on AWS ECS from DH Registry
