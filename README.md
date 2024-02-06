@@ -3,7 +3,7 @@
 ## Current App Link: (Public IP Link to be Posted Soon)
 
 ## Introduction
-This project is aimed at providing actionable insights to support SDG Number 8, by allowing users/stakeholders to do a Predictive Analysis of Productive Employment in Kenya based on Economic Growth. The project uses machine learning algorithms for the regression problem: Given the economic growth metrics (Contribution to GDP, Growth by GDP) according to Industry, predict the number of people in non-productive employment (working poor) and the total number in employment; per Industry. The models are deployed using Docker and Amazon EC2 for accessibility of the application
+This project is aimed at providing actionable insights to support SDG Number 8, by allowing users/stakeholders to do a Predictive Analysis of Productive Employment in Kenya based on Economic Growth. The project uses machine learning algorithms for the regression problem: <b>Given the economic growth metrics (Contribution to GDP, Growth by GDP) according to Industry, predict the number of people in non-productive employment (working poor) and the total number in employment; per Industry</b>. The models are deployed using Docker and Amazon EC2 for accessibility of the application
 
 ## Table of Contents
 * [Build_Tools](#Build_Tools)
@@ -92,6 +92,15 @@ This project is aimed at providing actionable insights to support SDG Number 8, 
 
 ## Deploy on Amazon ECS
 * Next we deploy the Productive Employment Prediction app on AWS ECS from DH Registry
+* The steps are as follows:
+	* Log in to AWS Management Console
+	* Search for ECS (Elastic Container Service)
+	* Create Cluster
+	* Create New Task Definition (with AWS Fargate)
+	* Input your container name from Docker Hub Repository, and configure security groups to allow connections from everywhere on our port (5000)
+	* Run Task Definition, which will download the image and deploy it in a container
+	* The running task will be accessible with the public IP address provided, coupled with port i.e ```http://public_ip_addr:port``` in your browser
+ 	* The Productive Employment Prediction Models are now deployed on Amazon ECS 
 
 ## Contributions
 Contributions are welcome using pull requests. To contribute, follow these steps:
