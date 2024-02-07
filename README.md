@@ -1,30 +1,33 @@
 # Deploying Productive Employment ML Model with Docker and Amazon ECS
 
-## Current App Link: (Public IP Link to be Posted Soon)
+## Current App Link: (Currently Private IP, Public IP Link to be Posted Soon)
 
 ## Introduction
 This project is aimed at providing actionable insights to support SDG Number 8, by allowing users/stakeholders to do a Predictive Analysis of Productive Employment in Kenya based on Economic Growth. The project uses machine learning algorithms for the regression problem: <b>Given the economic growth metrics (Contribution to GDP, Growth by GDP) according to Industry, predict the number of people in non-productive employment (working poor) and the total number in employment; per Industry</b>. The models are deployed using Docker and Amazon EC2 for accessibility of the application
 
 ## Table of Contents
-* [Build_Tools](#Build_Tools)
+* [Build_Tools](#Build-Tools)
 * [Pre-requisites](#Pre-requisites)
 * [Installation](#Installation)
-* [Container_Creation_with_Docker](#Container_Creation_with_Docker)
-* [Push_to_Docker_Hub](#Push_to_Docker_Hub)
-* [Deploy_on_Amazon_ECS](#Deploy_on_Amazon_ECS)
+* [Container_Creation_with_Docker](#Container-Creation-with-Docker)
+* [Push_to_Docker_Hub](#Push-to-Docker-Hub)
+* [Deploy_on_Amazon_ECS](#Deploy-on-Amazon-ECS)
 * [Contributions](#Contributions)
 * [Bug / Feature Request](#Bug--Feature-Request)
 * [Authors](#Authors)
 
-## Build_Tools
+## Build Tools
 * [Python 3.6.9](https://www.python.org/) - The programming language used.
 * [SciKit Learn](https://scikit-learn.org/stable/) - The machine learning library used.
+* Docker & Docker Hub
+* Amazon Elastic Container Service (ECS)
 
 
 ## Pre-requisites
 1. Anaconda from [Anaconda Organization](https://www.anaconda.com/) Installed on Local System
 2. Model files from earlier project: https://github.com/IsaacMwendwa/productive-employment-prediction
 3. Docker Desktop Installed with WSL 2 Integration (Ubuntu 20.04)
+4. AWS Account (AWS Management Console)
 
 ## Installation
 1. Create a directory called "Deployment" in your system, and download/clone this repo to the folder \
