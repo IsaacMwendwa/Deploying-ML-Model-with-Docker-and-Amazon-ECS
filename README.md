@@ -96,12 +96,33 @@ This project is aimed at providing actionable insights to support SDG Number 8, 
 ## Deploy on Amazon ECS
 * Next we deploy the Productive Employment Prediction app on AWS ECS from DH Registry
 * The steps are as follows:
-	* Log in to AWS Management Console
-	* Search for ECS (Elastic Container Service)
-	* Create Cluster
-	* Create New Task Definition (with AWS Fargate)
-	* Input your container name from Docker Hub Repository, and configure security groups to allow connections from everywhere on our port (5000)
+1. Log in to AWS Management Console
+   * Search for ECS (Elastic Container Service)
+2. Create Cluster
+   * Cluster Configuration: Input your Cluster name 
+   * Infrastructure: AWS Fargate, Amazon EC2, External instances (Choose Fargate)
+   * Click Create Cluster
+3. Create New Task Definition (with AWS Fargate)
+   * Task Definition COnfiguration: Input task definition family name
+   * Infrastructure Requirements:
+   	* Launch Type: AWS Fargate
+   	* OS/Architecture: Linux/X86_64
+   	* Task size (for reserving resources for task): CPU (.25 vCPU), Memory (1 GB)
+   	* Container: Name, Image URI(Input your container name from Docker Hub Repository), Essential container (Yes)
+   	* Port Mappings: Container Port: 5000, Protocol: TCP, Port name, App Protocol: HTTP
+	* Create Task Definition
+4. 
+ *
+ *
+ *
+ * configure security groups to allow connections from everywhere on our port (5000)
 	* Run Task Definition, which will download the image and deploy it in a container
+ 	* In the Run Task Definition, got to Compute Options, then select Launch Type, and Launch Type as FARGATE
+  	* In Deployment Configuration, select Task
+  	* Expand Networking, then select 3 subnets
+  	* In Security Group, Create a new Security group, give it a name and description
+  	* Define the inbound rules for the Security Group as follows: Type: Custom TCP Proctocol: TCP, Port Range: 5000, Source: Anywhere
+  	* Turn on Public IP to the task's elastic network interface
 	* The running task will be accessible with the public IP address provided, coupled with port i.e ```http://public_ip_addr:port``` in your browser
  	* The Productive Employment Prediction Models are now deployed on Amazon ECS 
 
