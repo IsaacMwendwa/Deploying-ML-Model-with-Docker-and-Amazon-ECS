@@ -1,17 +1,19 @@
 # Deploying Productive Employment ML Model with Docker and Amazon ECS
 
-## Current App Link: (Currently Private IP, Public IP Link to be Posted Soon)
+## Current App Link: [Productive Employment Prediction Application Running on Amazon ECS](http://18.220.82.49:5000/)
+<img width="937" alt="Deployed Container in Amazon ECS" src="https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/3fa1000c-c60c-46d6-af57-2497b120d57d">
+
 
 ## Introduction
 This project is aimed at providing actionable insights to support SDG Number 8, by allowing users/stakeholders to do a Predictive Analysis of Productive Employment in Kenya based on Economic Growth. The project uses machine learning algorithms for the regression problem: <b>Given the economic growth metrics (Contribution to GDP, Growth by GDP) according to Industry, predict the number of people in non-productive employment (working poor) and the total number in employment; per Industry</b>. The models are deployed using Docker and Amazon EC2 for accessibility of the application
 
 ## Table of Contents
-* [Build_Tools](#Build-Tools)
+* [Build Tools](#Build-Tools)
 * [Pre-requisites](#Pre-requisites)
 * [Installation](#Installation)
-* [Container_Creation_with_Docker](#Container-Creation-with-Docker)
-* [Push_to_Docker_Hub](#Push-to-Docker-Hub)
-* [Deploy_on_Amazon_ECS](#Deploy-on-Amazon-ECS)
+* [Container Creation with Docker](#Container-Creation-with-Docker)
+* [Push to Docker Hub](#Push-to-Docker-Hub)
+* [Deploy on Amazon ECS](#Deploy-on-Amazon-ECS)
 * [Contributions](#Contributions)
 * [Bug / Feature Request](#Bug--Feature-Request)
 * [Authors](#Authors)
@@ -111,20 +113,27 @@ This project is aimed at providing actionable insights to support SDG Number 8, 
    	* Container: Name, Image URI(Input your container name from Docker Hub Repository), Essential container (Yes)
    	* Port Mappings: Container Port: 5000, Protocol: TCP, Port name, App Protocol: HTTP
 	* Create Task Definition
-4. 
- *
- *
- *
- * configure security groups to allow connections from everywhere on our port (5000)
-	* Run Task Definition, which will download the image and deploy it in a container
- 	* In the Run Task Definition, got to Compute Options, then select Launch Type, and Launch Type as FARGATE
-  	* In Deployment Configuration, select Task
-  	* Expand Networking, then select 3 subnets
+ 	* After successful creation of task definition, click Deploy - Run Task; which will setup the task definition environment 
+ 4. Run Task - downloads the image and deploys it in a container
+    * Environment: Choose existing created cluster
+    * Compute options: Click Launch type (to launch tasks directly without use of a capacity provider strategy)
+    * Launch Type: FARGATE; Platform: LATEST
+    * Deployment Configuration
+  	* Application Type: Task (standalone task, not service)
+    * Networking
+     	* Select at least 1 subnet (leave the 3 default subnets)
   	* In Security Group, Create a new Security group, give it a name and description
-  	* Define the inbound rules for the Security Group as follows: Type: Custom TCP Proctocol: TCP, Port Range: 5000, Source: Anywhere
+  		* Define the inbound rules for the Security Group as follows: Type: Custom TCP Proctocol: TCP, Port Range: 5000, Source: Anywhere
   	* Turn on Public IP to the task's elastic network interface
-	* The running task will be accessible with the public IP address provided, coupled with port i.e ```http://public_ip_addr:port``` in your browser
- 	* The Productive Employment Prediction Models are now deployed on Amazon ECS 
+5. Click Create - will launch the task
+   *If the task's last status moves from "Provisioning" to "Running", then the task is successfully deployed
+   * The running task will be accessible with the public IP address provided, coupled with port i.e ```http://public_ip_addr:port``` in your browser
+   * The Productive Employment Prediction Models are now deployed on Amazon ECS: [Deployed Application](http://18.220.82.49:5000/)
+   * <img width="946" alt="image" src="https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/9068eb72-36da-48b4-8a19-bc840d9b5a34">
+   * <img width="937" alt="image" src="https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/164b69e6-41f3-438b-a200-f4647ad4a005">
+
+
+
 
 ## Contributions
 Contributions are welcome using pull requests. To contribute, follow these steps:
