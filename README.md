@@ -1,11 +1,15 @@
-# Deploying Productive Employment ML Model with Docker and Amazon ECS
+# Deploying Productive Employment ML Models with Docker and Amazon ECS
 
 ## Current App Link: [Productive Employment Prediction Application Running on Amazon ECS](http://18.220.82.49:5000/)
-<img width="937" alt="Deployed Container in Amazon ECS" src="https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/3fa1000c-c60c-46d6-af57-2497b120d57d">
+![image](https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/5bb17f7f-fa35-4e85-bb3d-200aebaff12a)
+![image](https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/d059f8b9-a141-49f7-a0b9-37786d61ebda)
+![image](https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/054ac339-3a4c-4ce8-b0d9-751fb2402c4d)
+
+
 
 
 ## Introduction
-This project is aimed at providing actionable insights to support SDG Number 8, by allowing users/stakeholders to do a Predictive Analysis of Productive Employment in Kenya based on Economic Growth. The project uses machine learning algorithms for the regression problem: <b>Given the economic growth metrics (Contribution to GDP, Growth by GDP) according to Industry, predict the number of people in non-productive employment (working poor) and the total number in employment; per Industry</b>. The models are deployed using Docker and Amazon EC2 for accessibility of the application
+This project is aimed at providing actionable insights to support SDG Number 8, by allowing users/stakeholders to do a Predictive Analysis of Productive Employment in Kenya based on Economic Growth. The project uses machine learning algorithms for the regression problem: <b>Given the economic growth metrics (Contribution to GDP, Growth by GDP) according to Industry, predict the number of people in non-productive employment (working poor) and the total number in employment; per Industry</b>. The two models are deployed using Docker and Amazon EC2 for accessibility of the application
 
 ## Table of Contents
 * [Build Tools](#Build-Tools)
