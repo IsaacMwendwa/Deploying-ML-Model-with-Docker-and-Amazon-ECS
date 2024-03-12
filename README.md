@@ -1,6 +1,6 @@
 # Deploying Productive Employment ML Models with Docker and Amazon ECS
 
-## Current App Link: [Productive Employment Prediction Application Running on Amazon ECS](http://52.15.74.224:5000/)
+## Current App Link: [Productive Employment Prediction Application Running on Amazon ECS](http://3.133.120.183:5000/)
 ![image](https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/5bb17f7f-fa35-4e85-bb3d-200aebaff12a)
 ![image](https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/d059f8b9-a141-49f7-a0b9-37786d61ebda)
 ![image](https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/054ac339-3a4c-4ce8-b0d9-751fb2402c4d)
@@ -132,7 +132,7 @@ This project is aimed at providing actionable insights to support SDG Number 8, 
 5. Click Create - will launch the task
    *If the task's last status moves from "Provisioning" to "Running", then the task is successfully deployed
    * The running task will be accessible with the public IP address provided, coupled with port i.e ```http://public_ip_addr:port``` in your browser
-   * The Productive Employment Prediction Models are now deployed on Amazon ECS: [Deployed Application](http://52.15.74.224:5000/)
+   * The Productive Employment Prediction Models are now deployed on Amazon ECS: [Deployed Application](http://3.133.120.183:5000/)
    * <img width="946" alt="image" src="https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/9068eb72-36da-48b4-8a19-bc840d9b5a34">
    * <img width="937" alt="image" src="https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/164b69e6-41f3-438b-a200-f4647ad4a005">
 
