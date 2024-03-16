@@ -1,17 +1,18 @@
 # Deploying Productive Employment ML Models with Docker and Amazon ECS
 
 ## Current App Link: [Productive Employment Prediction Application Running on Amazon ECS](http://3.133.120.183:5000/)
+* ### Home Page of Predictive Analysis Application
 ![Home Page of Predictive Analysis Application](https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/d4eee7ab-17c6-4f85-94b0-445fa41da07d)
-
+<br />
+* ### Prediction Results from Models, According to Industry
 ![Prediction Results in 000's](https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/0b21e42c-09f4-41c7-8d55-129130b57f80)
-
-![Percentage Contribution of Predictions](https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/462b7bb4-6563-4e0a-a997-dbb2ceef25c9)
-
+<br />
+* ### Prediction Results by Percentage Contribution, According to Industry
+![Percentage Contribution of Predictions](https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/2b575f64-e1de-4b7a-b235-87c5bc401ebe)
+<br />
+* ### Real-time Model Monitoring Report
+*Results are according to input dataset, as compared to training dataset*
 ![Real-time Model Monitoring Report](https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/9c9226dc-1708-463e-bbb7-ad8066f954a3)
-
-
-
-
 
 
 
@@ -140,8 +141,10 @@ This project is aimed at providing actionable insights to support SDG Number 8, 
    *If the task's last status moves from "Provisioning" to "Running", then the task is successfully deployed
    * The running task will be accessible with the public IP address provided, coupled with port i.e ```http://public_ip_addr:port``` in your browser
    * The Productive Employment Prediction Models are now deployed on Amazon ECS: [Deployed Application](http://3.133.120.183:5000/)
-   * <img width="946" alt="image" src="https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/9068eb72-36da-48b4-8a19-bc840d9b5a34">
-   * <img width="937" alt="image" src="https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/164b69e6-41f3-438b-a200-f4647ad4a005">
+   * ![Running Task](https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/5f761102-b847-4476-8f21-2a520a903e94)
+   * <br />
+   * ![Deployed Image](https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/dedd887c-3220-4f8b-8b72-18668d677093)
+
 
 
 
