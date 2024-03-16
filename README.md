@@ -1,9 +1,16 @@
 # Deploying Productive Employment ML Models with Docker and Amazon ECS
 
 ## Current App Link: [Productive Employment Prediction Application Running on Amazon ECS](http://3.133.120.183:5000/)
-![image](https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/5bb17f7f-fa35-4e85-bb3d-200aebaff12a)
-![image](https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/d059f8b9-a141-49f7-a0b9-37786d61ebda)
-![image](https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/054ac339-3a4c-4ce8-b0d9-751fb2402c4d)
+![Home Page of Predictive Analysis Application](https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/d4eee7ab-17c6-4f85-94b0-445fa41da07d)
+
+![Prediction Results in 000's](https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/0b21e42c-09f4-41c7-8d55-129130b57f80)
+
+![Percentage Contribution of Predictions](https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/462b7bb4-6563-4e0a-a997-dbb2ceef25c9)
+
+![Real-time Model Monitoring Report](https://github.com/IsaacMwendwa/Deploying-ML-Model-with-Docker-and-Amazon-ECS/assets/51324520/9c9226dc-1708-463e-bbb7-ad8066f954a3)
+
+
+
 
 
 
